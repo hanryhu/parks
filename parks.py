@@ -16,6 +16,13 @@ def generate_trail_length(round=0, players=3):
    special_token = randint(1, special_token_lim)
    print(f"Welcome to parks season {round + 1}!")
    print(f"Pick special token {special_token} of {special_token_lim}")
+   if not 0 <= round < 4:
+       print(f"Season must be between 1 and 4.")
+       return
+   if not 2 <= players < 6:
+       # TODO solo mode.
+       print(f"Players must be between 2 and 5.")
+       return
 
    if round == 0:
       print(f"Player {randint(1, players)} goes first.")
